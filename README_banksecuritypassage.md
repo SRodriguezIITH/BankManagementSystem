@@ -23,3 +23,9 @@ from autopdf import pdfn
 from loadf import loadbar
  
 G. The package can now be imported in our main code
+
+Binary File:
+Now, We have also saved a bankSecureEncryptedDATA.dat file which will be 
+accessed by manager function in our main code.
+The binary file is human unreadable and hence works as sort of encryption 
+of top secret banking data
