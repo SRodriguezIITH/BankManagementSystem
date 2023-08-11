@@ -57,3 +57,5 @@ Sunrise Chartered Bank System Portal
 Manager Name will be = Sandeep Verma
 Manager Override Code = “m@override”( in employee code input line)
 Manager Master Code will be = man@suncb23
+
+NOTE: The indentations weren't preserved as I transferred my cod efrom IDE to git. As the number of lines of code were heavy for me to re-indent, they have been left as it is. Kindly indent as required
