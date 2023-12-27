@@ -24,7 +24,7 @@ def pdfn(task, AN, CN,IB, FB, M,EN,RN,ACT):
  pdf.cell(200,10,txt="Manager",ln=16,align='R')
  pdf.cell(200,10,txt="Sandeep Verma",ln=17,align='R')
  pdf.cell(200,10,txt="-"*50,ln=18,align='C')
-Page | 15
+
  pdf.cell(200,10,txt="I,"+str(CN)+" hereby agree that the above transaction was done 
 in my presence and understand that",ln=19,align='C')
  pdf.cell(200,10,txt="Bank will not be responsible for any losses or inadvertent 
