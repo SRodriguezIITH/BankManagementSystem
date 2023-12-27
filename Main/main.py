@@ -22,7 +22,7 @@ print()
 print(" "*39,emoji.emojize(":sunflower:")," Sunrise Chartered Bank SystemPortal",emoji.emojize(":bank:"))
 print(" "*45,todaytm)
 print()
-Page | 18
+
 #Function Manager which can only be called if manager types m@override and 
 #enters correct password in employee code login section
 def manager():
@@ -48,7 +48,7 @@ def manager():
  if cho==1:
  curs.execute("SELECT * FROM emplist")
  eml=curs.fetchall()
-Page | 19
+
  print("(code, Name, Password)")
  for i in eml:
  print(i)
@@ -76,7 +76,7 @@ def login():
  global loginb #Flag variable for login 
  global emppas
  loginb=False
-Page | 20
+
  print()
  if empresp=='Y':
  while flag > 0: #Recursive Loop to limit permissible input upto 3 attempts
@@ -102,7 +102,6 @@ Page | 20
  #To check if input is an integer or not. Else flag-=1 i.e reduce available attempts
  if k==False:
  try:
-Page | 21
  empcd=int(empcd)
  except:
  print("Kindly Type Only 5 digit Positive Integer")
@@ -132,7 +131,7 @@ Page | 21
  print("Employee Not Found!!")
  print("Exiting")
  for i in range(10):
-Page | 22
+
  print('.',end='')
  time.sleep(0.15)
  quit()
@@ -158,7 +157,7 @@ login() #Func1 - To call object which runs login and registratiuon of employee
 def main():
  print()
  print(" "*39,emoji.emojize(":derelict_house:"),"Main Menu")
-Page | 23
+
  
  curs.execute("select Name from emplist where code="+str(empcd))
  empnm=curs.fetchone()
@@ -184,7 +183,7 @@ Page | 23
  print("9. Customer Complaints")
  print("10. Exit")
  print()
-Page | 24
+
  global ch
  flag=4
  while flag>0: #Attempt Limiter Recursive Loop (ALRL)
@@ -213,7 +212,7 @@ def dash():
  print(" "*39,emoji.emojize(":memo:"),"Dashboard")
  print()
  curs.execute("select * from emplist where code="+str(empcd))
-Page | 25
+
  empdt=curs.fetchall()
  print("Employee Name:",empdt[0][1])
  print("Employee Code:",empdt[0][0])
@@ -304,7 +303,7 @@ module gives this '🙍\u200d♂' output so we access only elem at 0th index
  dt=datetime.datetime.now()
  dt=str(dt)
  dt='\''+dt+'\''
-Page | 28
+
  #Sql employee action log insertion 
  curs.execute("select Name from emplist where code="+str(empcd))
  empname=curs.fetchone()
@@ -355,7 +354,7 @@ def dep():
  if detdict['Status']=='Blocked':
  print("The account is blocked. Kindly unblock to proceed.")
  time.sleep(2)
-Page | 30
+
  raise Exception("Account Is BLOCKED. Permission to access=False")
  
  else:
@@ -381,7 +380,7 @@ Page | 30
  curs.execute("UPDATE customeracct SET BankBal="+str(newbal)+" where AcctNo="+str(acn))
  db.commit()
  detdict['Balance']+=amdep
-Page | 31
+
  #LoadScreenBar
  loadf.loadbar(ch) 
  print("\n\n")
@@ -688,7 +687,7 @@ else:
  curs.execute("select Name from emplist where code="+str(empcd))
  empname=curs.fetchone()
  enm=empname[0].upper()
-Page | 41
+
  empname = '\' '+empname[0]+'\' '
  empactfun.empactfunw(str(empcd),empname,dt,"\'Money Transferred "+str(rand)+"\'")
  print()
@@ -740,7 +739,7 @@ def bnst():
  detdict['Customer_Name']=cdet[1]
  detdict['Balance']=cdet[2]
  detdict['Status']=cdet[3] #Will store 1 if actt is active else 0
-Page | 43
+
  if detdict['Status']==1:
  detdict['Status']='Active'
  else:
@@ -769,7 +768,7 @@ Page | 43
  print(j,end="\t ")
  print("\n\n")
  curs.execute("select * from custstmnt where AcctNo="+str(acn))
-Page | 44
+
  det=curs.fetchall()
  print("Date \t\t\t Action")
  for i in det:
@@ -795,7 +794,7 @@ Page | 44
  pdf.cell(200,10,txt="Manager",ln=22,align='R')
  pdf.cell(200,10,txt="Sandeep Verma",ln=23,align='R')
  pdf.cell(200,10,txt="-"*50,ln=18,align='C')
-Page | 45
+
  pdf.cell(200,10,txt="Bank will not be responsible for any losses or inadvertent 
 errors",ln=20,align='C')
  
@@ -824,7 +823,7 @@ def loan():
  curs.execute(exst)
  tempcd=curs.fetchone()
  if tempcd==None:
-Page | 46
+
  acctnum=i
  
  print("Enter Customer Name:",end="")
@@ -852,7 +851,7 @@ Page | 46
  
  curs.execute(est)
  db.commit()
-Page | 47
+
  print()
  print("Loan Account Created Successfully!")
  bacn=int(input("Enter Bank Account Number:"))
@@ -877,7 +876,6 @@ Page | 47
  print("Server Request Code:",rand)
  break
  else:
-Page | 48
  i+=1
  
 elif cho==2:
@@ -905,7 +903,6 @@ elif cho==2:
  print("Cancelled")
  quit()
  elif conf.upper()=='Y':
-Page | 49
  pass
  emcds=str(empcd)
  
@@ -1060,7 +1057,6 @@ def compl():
  #Abv Stmnts - tuple having 1 i.e. [(1,)] if account exists else tuple having 0 i.e., [(0,)]
  if actex[0]==0:
  print("Account Does Not Exist!!")
-Page | 55
  raise Exception("ACCOUNT NOT FOUND$$ COMPLAINT FAILED")
  
  else:
@@ -1112,7 +1108,6 @@ Page | 56
  print()
  print("Server Request Code:",rand)
  
-Page | 57
 #Calling functions based on user(employee) choice
 if ch==1:
  dash()
