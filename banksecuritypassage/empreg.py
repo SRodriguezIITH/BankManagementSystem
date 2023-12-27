@@ -24,7 +24,7 @@ def empregfun():
  pas=input("Allot a password to employee:")
  est="insert into emplist values ("+str(empcd)+','+nm+','+pas+")"
  curs.execute(est)
-Page | 13
+
  db.commit()
  print()
  print("Employee Added Sucessfully!")
